@@ -657,3 +657,76 @@ img {
         .pengumuman-imgs img:hover {
             transform: scale(1.04);
         }
+
+        .section-mitra {
+            padding: 70px 0;
+            background: var(--abu-muda);
+        }
+
+        .mitra-slider-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mitra-slider-wrap::before,
+        .mitra-slider-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .mitra-slider-wrap::before {
+            left: 0;
+            background: linear-gradient(to right, var(--abu-muda), transparent);
+        }
+
+        .mitra-slider-wrap::after {
+            right: 0;
+            background: linear-gradient(to left, var(--abu-muda), transparent);
+        }
+
+        .mitra-track {
+            display: flex;
+            gap: 20px;
+            animation: scrollMitra 25s linear infinite;
+        }
+
+        .mitra-track:hover { animation-play-state: paused; }
+
+        @keyframes scrollMitra {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .mitra-item {
+            flex-shrink: 0;
+            width: 180px;
+            height: 100px;
+            background: var(--putih);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: var(--transition);
+        }
+
+        .mitra-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .mitra-item img {
+            max-width: 100%;
+            max-height: 60px;
+            object-fit: contain;
+            filter: grayscale(30%);
+            transition: var(--transition);
+        }
+
+        .mitra-item:hover img { filter: grayscale(0%); }
