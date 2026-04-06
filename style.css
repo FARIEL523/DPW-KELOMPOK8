@@ -602,3 +602,58 @@ img {
     box-shadow: 0 8px 25px rgba(173, 0, 0, 0.4);
     color: var(--putih);
 }
+
+        .pengumuman-banner {
+            background: linear-gradient(135deg, var(--hitam) 0%, #2a2a2a 100%);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pengumuman-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(173,0,0,0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .pengumuman-inner {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .pengumuman-label {
+            flex-shrink: 0;
+            background: var(--merah);
+            color: var(--putih);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            border-radius: 6px;
+        }
+
+        .pengumuman-imgs {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .pengumuman-imgs img {
+            max-height: 80px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(1.1);
+            transition: var(--transition);
+        }
+
+        .pengumuman-imgs img:hover {
+            transform: scale(1.04);
+        }
